@@ -1,5 +1,3 @@
-import "./NavItem.scss";
-
 export default function NavItem(props) {
   return (
     <li className="nav-item">
