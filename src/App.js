@@ -14,12 +14,37 @@ function App() {
   return (
     <div className="App">
       <Navbar>
-        <NavItem icon="😃" />
-        <NavItem icon="😃" />
-        <NavItem icon="😃" />
+        <NavItem icon={<PlusIcon />} />
+        <NavItem icon={<BellIcon />} />
+        <NavItem icon={<MessengerIcon />} />
+
+        <NavItem icon={<CaretIcon />}>
+          <DropdownMenu />
+        </NavItem>
       </Navbar>
     </div>
   );
 }
 
 export default App;
+
+function DropdownMenu() {
+  function DropdownItem(props) {
+    return (
+      <a href="#" className="menu-item">
+        <span className="icon-button">{props.leftIcon}</span>
+        {props.children}
+        <span className="icon-right">{props.rightIcon}</span>
+      </a>
+    );
+  }
+  return (
+    <div className="dropdown">
+      <DropdownItem>My Profile</DropdownItem>
+      <DropdownItem
+        leftIcon={<CogIcon />}
+        rightIcon={<ChevronIcon />}
+      ></DropdownItem>
+    </div>
+  );
+}
