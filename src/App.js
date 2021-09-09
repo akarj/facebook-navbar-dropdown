@@ -10,6 +10,8 @@ import { ReactComponent as MessengerIcon } from "./data/svg_icon_data/messenger.
 import { ReactComponent as PlusIcon } from "./data/svg_icon_data/plus.svg";
 import React from "react";
 
+import DropdownMenu from "./components/dropdown/Dropdown";
+
 function App() {
   return (
     <div className="App">
@@ -27,24 +29,3 @@ function App() {
 }
 
 export default App;
-
-function DropdownMenu() {
-  function DropdownItem(props) {
-    return (
-      <a href="#" className="menu-item">
-        <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
-      </a>
-    );
-  }
-  return (
-    <div className="dropdown">
-      <DropdownItem>My Profile</DropdownItem>
-      <DropdownItem
-        leftIcon={<CogIcon />}
-        rightIcon={<ChevronIcon />}
-      ></DropdownItem>
-    </div>
-  );
-}
